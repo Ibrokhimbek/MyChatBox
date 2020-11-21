@@ -1,0 +1,24 @@
+{
+  "name": "Socket.io",
+  "version": "1.0.0",
+  "description": "Chat application made by socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ibrokhimbek/MyChatBox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ibrokhimbek/MyChatBox/issues"
+  },
+  "homepage": "https://github.com/Ibrokhimbek/MyChatBox#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
+}

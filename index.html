@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Box</title>
+  </head>
+  <body>
+    <p>Hello I'm a Client</p>
+    <input type="text" class="input" />
+    <button type="button" class="btn" style="padding: 5px 10px">
+      Click here
+    </button>
+
+    <div class="txt"></div>
+    <div class="ulandi"></div>
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <script>
+      const socket = io.connect("http://localhost:3000/");
+
+      const btn = document.querySelector(".btn");
+      const input = document.querySelector(".input");
+      const txt = document.querySelector(".txt");
+
+      btn.addEventListener("click", () => {
+        document.querySelector(".ulandi").innerHTML = `Welcome !`
+        socket.emit("NewUser", { name: input.value });
+      });
+
+      socket.on("UserMessage", (data) => {
+        txt.innerHTML = `${data.message} connected`;
+      });
+    </script>
+  </body>
+</html>
